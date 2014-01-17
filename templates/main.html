@@ -6,7 +6,22 @@
 
     <ul class="col-md-6 col-md-offset-3 list-group">
         <li class="list-group-item" ng-repeat="item in data">
+            <span class="badge">
+                <div ng-click="removeItem(item)" class="pointer">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </div>
+            </span>
             {{item.foo}}
         </li>
     </ul>
+    <div class="col-md-6 col-md-offset-3">
+        <form name="myForm">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="New item to add..." ng-model="newItem" required />
+                <span class="input-group-btn" >
+                    <button type="submit" class="btn btn-success pointer" ng-click="addItem(newItem, myForm)"><span class="glyphicon glyphicon-plus"></span> Add</button>
+                </span>
+            </div>
+        </form>
+    </div>
 </div>
