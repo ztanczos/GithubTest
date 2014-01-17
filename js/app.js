@@ -6,8 +6,9 @@ var githubTestApp = angular.module('githubTestApp', ['ngRoute'])
             controller: 'MainController',
             templateUrl: 'templates/main.html'
         })
-        .when('/belo', {
-            templateUrl: 'templates/belo.html'
+        .when('/multiPaint', {
+            controller: 'CanvasController',
+            templateUrl: 'templates/multipaint.html'
         })
         .otherwise({
            redirectTo: '/helo'
