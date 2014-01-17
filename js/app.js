@@ -1,9 +1,10 @@
 'use strict';
 
 var githubTestApp = angular.module('githubTestApp', ['ngRoute'])
-.config(['$routeProvider', function($routeProvider) {
+.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.when('/helo', {
-                    templateUrl: 'templates/main.html'
+            controller: 'MainController',
+            templateUrl: 'templates/main.html'
         })
         .when('/belo', {
             templateUrl: 'templates/belo.html'
@@ -11,4 +12,5 @@ var githubTestApp = angular.module('githubTestApp', ['ngRoute'])
         .otherwise({
            redirectTo: '/helo'
         });
+
     }]);
